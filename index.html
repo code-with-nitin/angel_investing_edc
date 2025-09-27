@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angel Investor Masterclass - eDC IIT Delhi</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FIX #1: Added Glide.js CSS for the carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -40,43 +44,39 @@
              background-position: 0 0, 10px 10px;
         }
         /* --- Glide.js Carousel Arrow Styles --- */
-.glide__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border-radius: 9999px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border: 1px solid #e2e8f0;
-    color: var(--charcoal);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-.glide__arrow:hover {
-    background-color: #f7fafc;
-    transform: translateY(-50%) scale(1.1);
-}
-.glide__arrow--left {
-    left: -20px;
-}
-.glide__arrow--right {
-    right: -20px;
-}
-@media (max-width: 768px) {
-    .glide__arrow--left { left: 10px; }
-    .glide__arrow--right { right: 10px; }
-}
+        .glide__arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 9999px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e2e8f0;
+            color: var(--charcoal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .glide__arrow:hover {
+            background-color: #f7fafc;
+            transform: translateY(-50%) scale(1.1);
+        }
+        .glide__arrow--left {
+            left: -20px;
+        }
+        .glide__arrow--right {
+            right: -20px;
+        }
+        @media (max-width: 768px) {
+            .glide__arrow--left { left: 10px; }
+            .glide__arrow--right { right: 10px; }
+        }
 
-        /* --- Custom Form Styles --- */
-        .form-input {
-    @apply mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 transition duration-200 ease-in-out;
-    @apply focus:bg-white focus:border-iitd-blue-light focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none;
-}
+        /* FIX #2: Removed the non-working .form-input class */
         .form-radio {
             @apply text-iitd-blue focus:ring-blue-200 focus:ring-opacity-50;
         }
@@ -211,54 +211,7 @@
                 </div>
             </div>
         </section>
-        <!-- START: Carousel Section -->
-<section id="past-events" class="py-24 bg-light-gray">
-    <div class="container mx-auto px-6 fade-in">
-        <div class="text-center mb-16">
-            <h3 class="text-3xl lg:text-4xl font-bold text-charcoal">Insights from Past Events</h3>
-        </div>
-
-        <!-- Carousel Container -->
-        <div id="image-carousel" class="glide relative w-full max-w-2xl mx-auto">
-            <div class="glide__track" data-glide-el="track">
-                <ul class="glide__slides">
-                    <!-- Slide 1 -->
-                    <li class="glide__slide">
-                        <div class="relative">
-                            <div class="absolute -top-4 -left-4 w-full h-full bg-iitd-gold rounded-lg transform -rotate-3"></div>
-                            <img src="https://github.com/code-with-nitin/angel_investing_edc/blob/main/Event_image1.jpg?raw=true" alt="Past Event Image 1" class="relative rounded-lg shadow-2xl w-full h-auto object-cover">
-                        </div>
-                    </li>
-                    <!-- Slide 2 -->
-                    <li class="glide__slide">
-                        <div class="relative">
-                            <div class="absolute -top-4 -left-4 w-full h-full bg-iitd-gold rounded-lg transform -rotate-3"></div>
-                            <img src="https://github.com/code-with-nitin/angel_investing_edc/blob/main/Event_image4.jpg?raw=true" alt="Past Event Image 2" class="relative rounded-lg shadow-2xl w-full h-auto object-cover">
-                        </div>
-                    </li>
-                    <!-- Slide 3 -->
-                    <li class="glide__slide">
-                        <div class="relative">
-                            <div class="absolute -top-4 -left-4 w-full h-full bg-iitd-gold rounded-lg transform -rotate-3"></div>
-                            <img src="https://github.com/code-with-nitin/angel_investing_edc/blob/main/Event_image5.jpg?raw=true" alt="Past Event Image 3" class="relative rounded-lg shadow-2xl w-full h-auto object-cover">
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Carousel Navigation Arrows -->
-            <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-                </button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- END: Carousel Section -->
+        
         <!-- Agenda Section -->
         <section id="agenda" class="py-24">
             <div class="container mx-auto px-6 fade-in">
@@ -308,29 +261,76 @@
         </section>
 
         <!-- Speaker Section -->
-        <section id="speaker" class="py-24 bg-light-gray">
-            <div class="px-6 fade-in">
+        <section id="speaker" class="py-24">
+             <div class="px-6 fade-in">
                  <div class="text-center mb-16">
                     <h3 class="text-3xl lg:text-4xl font-bold text-charcoal">Meet your Speaker</h3>
                 </div>
-<div class="space-y-12">
-    <div class="w-full max-w-2xl mx-auto">
-        <div class="relative">
-            <div class="absolute -top-4 -left-4 w-full h-full bg-iitd-gold rounded-lg transform -rotate-3"></div>
-            <img src="https://github.com/code-with-nitin/angel_investing_edc/blob/main/Meet_the_speaker.jpg?raw=true" alt="Amit Gupta" class="relative rounded-lg shadow-2xl w-full h-auto object-cover">
-        </div>
-    </div>
+                <div class="space-y-12">
+                    <!-- Image Block: Has its own width limit -->
+                    <div class="w-full max-w-2xl mx-auto">
+                        <div class="relative">
+                            <div class="absolute -top-4 -left-4 w-full h-full bg-iitd-gold rounded-lg transform -rotate-3"></div>
+                            <img src="https://github.com/code-with-nitin/angel_investing_edc/blob/main/Meet_the_speaker.jpg?raw=true" alt="Amit Gupta" class="relative rounded-lg shadow-2xl w-full h-auto object-cover">
+                        </div>
+                    </div>
+                
+                    <!-- Text Block: Has its own, narrower width limit for readability -->
+                    <div class="w-full max-w-3xl mx-auto text-center">
+                        <h3 class="text-4xl font-bold text-iitd-blue mb-4">Amit Gupta</h3>
+                        <div class="space-y-4 text-slate-gray text-lg">
+                           <p>From writing code in the early 2000s to writing investment cheques today, Amit’s journey through the Indian startup ecosystem has been nothing short of adventurous. In the past 15+ years, he’s played almost every role in the book — coder, engineering lead, product manager, product head, strategist, and now, full-time angel investor.</p>
+                           <p>As an investor, Amit has built an impressive record — clocking a <span class="font-bold text-charcoal">105% XIRR over six years</span>, backing some of the most promising startups of this decade. Through his Angel Syndicate, he connects disruptive founders with a community of 1000+ aspiring entrepreneurs and investors.</p>
+                           <p>At his heart, Amit is drawn to startups that solve tough, real-world problems with immediate demand — from deeptech to defence tech. For him, angel investing is more than just investing money; it’s about fueling innovation, empowering founders, and helping shape the future.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Text Block: Has its own, narrower width limit for readability -->
-    <div class="w-full max-w-3xl mx-auto text-center">
-        <h3 class="text-4xl font-bold text-iitd-blue mb-4">Amit Gupta</h3>
-        <div class="space-y-4 text-slate-gray text-lg">
-           <p>From writing code in the early 2000s to writing investment cheques today, Amit’s journey through the Indian startup ecosystem has been nothing short of adventurous. In the past 15+ years, he’s played almost every role in the book — coder, engineering lead, product manager, product head, strategist, and now, full-time angel investor.</p>
-           <p>As an investor, Amit has built an impressive record — clocking a <span class="font-bold text-charcoal">105% XIRR over six years</span>, backing some of the most promising startups of this decade. Through his Angel Syndicate, he connects disruptive founders with a community of 1000+ aspiring entrepreneurs and investors.</p>
-           <p>At his heart, Amit is drawn to startups that solve tough, real-world problems with immediate demand — from deeptech to defence tech. For him, angel investing is more than just investing money; it’s about fueling innovation, empowering founders, and helping shape the future.</p>
-        </div>
-    </div>
-</div>
+        <!-- Carousel Section -->
+        <section id="past-events" class="py-24 bg-light-gray">
+            <div class="container mx-auto px-6 fade-in">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-charcoal">Insights from Past Events</h3>
+                </div>
+                <!-- Carousel Container -->
+                <div id="image-carousel" class="glide relative w-full max-w-2xl mx-auto">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            <!-- Slide 1 -->
+                            <li class="glide__slide">
+                                <div class="relative">
+                                    <div class="absolute -top-4 -left-4 w-full h-full bg-iitd-gold rounded-lg transform -rotate-3"></div>
+                                    <img src="https://github.com/code-with-nitin/angel_investing_edc/blob/main/Event_image1.jpg?raw=true" alt="Past Event Image 1" class="relative rounded-lg shadow-2xl w-full h-[450px] object-cover">
+                                </div>
+                            </li>
+                            <!-- Slide 2 -->
+                            <li class="glide__slide">
+                                <div class="relative">
+                                    <div class="absolute -top-4 -left-4 w-full h-full bg-iitd-gold rounded-lg transform -rotate-3"></div>
+                                    <img src="https://github.com/code-with-nitin/angel_investing_edc/blob/main/Event_image4.jpg?raw=true" alt="Past Event Image 2" class="relative rounded-lg shadow-2xl w-full h-[450px] object-cover">
+                                </div>
+                            </li>
+                            <!-- Slide 3 -->
+                            <li class="glide__slide">
+                                <div class="relative">
+                                    <div class="absolute -top-4 -left-4 w-full h-full bg-iitd-gold rounded-lg transform -rotate-3"></div>
+                                    <img src="https://github.com/code-with-nitin/angel_investing_edc/blob/main/Event_image5.jpg?raw=true" alt="Past Event Image 3" class="relative rounded-lg shadow-2xl w-full h-[450px] object-cover">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Carousel Navigation Arrows -->
+                    <div class="glide__arrows" data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                        </button>
+                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -348,35 +348,36 @@
                             <!-- Form Fields -->
                             <div>
                                 <label for="Name" class="block text-sm font-medium text-gray-700">Name*</label>
-                                <input type="text" name="Name" id="Name" required class="form-input">
+                                <!-- FIX #2: Applied classes directly -->
+                                <input type="text" name="Name" id="Name" required class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 transition duration-200 ease-in-out focus:bg-white focus:border-iitd-blue-light focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none">
                             </div>
                             <div>
                                 <label for="Email" class="block text-sm font-medium text-gray-700">Email*</label>
-                                <input type="email" name="Email" id="Email" required class="form-input">
+                                <input type="email" name="Email" id="Email" required class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 transition duration-200 ease-in-out focus:bg-white focus:border-iitd-blue-light focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none">
                             </div>
                             <div>
                                 <label for="City_of_Residence" class="block text-sm font-medium text-gray-700">City of Residence*</label>
-                                <input type="text" name="City of Residence" id="City_of_Residence" required class="form-input">
+                                <input type="text" name="City of Residence" id="City_of_Residence" required class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 transition duration-200 ease-in-out focus:bg-white focus:border-iitd-blue-light focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none">
                             </div>
                              <div>
                                 <label for="Phone_No" class="block text-sm font-medium text-gray-700">Phone No*</label>
-                                <input type="tel" name="Phone No" id="Phone_No" required class="form-input">
+                                <input type="tel" name="Phone No" id="Phone_No" required class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 transition duration-200 ease-in-out focus:bg-white focus:border-iitd-blue-light focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none">
                             </div>
                              <div>
                                 <label for="Profession" class="block text-sm font-medium text-gray-700">Current Profession/Designation*</label>
-                                <input type="text" name="Current Profession/Designation" id="Profession" required class="form-input">
+                                <input type="text" name="Current Profession/Designation" id="Profession" required class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 transition duration-200 ease-in-out focus:bg-white focus:border-iitd-blue-light focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none">
                             </div>
                              <div>
                                 <label for="Organization" class="block text-sm font-medium text-gray-700">Company/Organization*</label>
-                                <input type="text" name="Company/Organization" id="Organization" required class="form-input">
+                                <input type="text" name="Company/Organization" id="Organization" required class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 transition duration-200 ease-in-out focus:bg-white focus:border-iitd-blue-light focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none">
                             </div>
                             <div>
                                 <label for="Years_of_Experience" class="block text-sm font-medium text-gray-700">Years of Professional Experience*</label>
-                                <input type="number" name="Years of Professional Experience" id="Years_of_Experience" min="0" required class="form-input">
+                                <input type="number" name="Years of Professional Experience" id="Years_of_Experience" min="0" required class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 transition duration-200 ease-in-out focus:bg-white focus:border-iitd-blue-light focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none">
                             </div>
                             <div>
                                 <label for="LinkedIn_Profile" class="block text-sm font-medium text-gray-700">LinkedIn Profile*</label>
-                                <input type="url" name="LinkedIn Profile" id="LinkedIn_Profile" placeholder="https://linkedin.com/in/yourprofile" required class="form-input">
+                                <input type="url" name="LinkedIn Profile" id="LinkedIn_Profile" placeholder="https://linkedin.com/in/yourprofile" required class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 transition duration-200 ease-in-out focus:bg-white focus:border-iitd-blue-light focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none">
                             </div>
                             
                             <!-- Radio & Conditional Field -->
@@ -395,16 +396,16 @@
                             </div>
                             <div id="investment-details-container" class="md:col-span-2 hidden">
                                  <label for="Investment_Details" class="block text-sm font-medium text-gray-700">If Yes, please share details (number of investments, domains, ticket sizes, etc.)</label>
-                                <textarea name="If Yes, Please Share details (number of investments, domains, ticket sizes, etc.)" id="Investment_Details" rows="3" class="form-input"></textarea>
+                                <textarea name="If Yes, Please Share details (number of investments, domains, ticket sizes, etc.)" id="Investment_Details" rows="3" class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 transition duration-200 ease-in-out focus:bg-white focus:border-iitd-blue-light focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none"></textarea>
                             </div>
 
                             <!-- Select Fields -->
                              <div class="md:col-span-2 grid md:grid-cols-3 gap-8">
                                 <div>
                                     <label for="Income_Range" class="block text-sm font-medium text-gray-700">Approximate annual income range?*</label>
-                                    <select name="What is your approximate annual income range?" id="Income_Range" required class="form-input">
+                                    <select name="What is your approximate annual income range?" id="Income_Range" required class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 transition duration-200 ease-in-out focus:bg-white focus:border-iitd-blue-light focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none">
                                         <option value="" disabled selected>Select range</option>
-                                        <option>Below ₹50 Lakh</option>
+                                        <option>₹25-50 Lakhs</option>
                                         <option>₹50 Lakh - ₹1 Crore</option>
                                         <option>₹1 Crore - ₹5 Crore</option>
                                         <option>Above ₹5 Crore</option>
@@ -412,7 +413,7 @@
                                 </div>
                                  <div>
                                     <label for="Ticket_Size" class="block text-sm font-medium text-gray-700">Typical ticket size per startup?*</label>
-                                    <select name="What is the typical ticket size you would be comfortable investing per startup?" id="Ticket_Size" required class="form-input">
+                                    <select name="What is the typical ticket size you would be comfortable investing per startup?" id="Ticket_Size" required class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 transition duration-200 ease-in-out focus:bg-white focus:border-iitd-blue-light focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none">
                                         <option value="" disabled selected>Select size</option>
                                         <option>₹1-5 Lakhs</option>
                                         <option>₹5-10 Lakhs</option>
@@ -422,7 +423,7 @@
                                 </div>
                                  <div>
                                     <label for="Investment_Frequency" class="block text-sm font-medium text-gray-700">Investments in next 12 months?*</label>
-                                    <select name="Over the next 12 months, how many startup investments would you ideally like to make?" id="Investment_Frequency" required class="form-input">
+                                    <select name="Over the next 12 months, how many startup investments would you ideally like to make?" id="Investment_Frequency" required class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 transition duration-200 ease-in-out focus:bg-white focus:border-iitd-blue-light focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none">
                                         <option value="" disabled selected>Select count</option>
                                         <option>1-2</option>
                                         <option>3-5</option>
@@ -446,7 +447,7 @@
 
                             <div class="md:col-span-2">
                                 <label for="Queries" class="block text-sm font-medium text-gray-700">Any Queries</label>
-                                <textarea name="Any Queries" id="Queries" rows="3" class="form-input"></textarea>
+                                <textarea name="Any Queries" id="Queries" rows="3" class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 transition duration-200 ease-in-out focus:bg-white focus:border-iitd-blue-light focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none"></textarea>
                             </div>
                         </div>
 
@@ -476,6 +477,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- FIX #1: Moved Glide.js script tag to be *before* the main script -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
@@ -512,24 +516,24 @@
                 }
             });
         });
+        
         // Carousel Initialization
-const carousel = document.getElementById('image-carousel');
-if (carousel) {
-    new Glide(carousel, {
-        type: 'carousel',
-        startAt: 0,
-        perView: 1,
-        autoplay: 4000,
-        hoverpause: true,
-        gap: 0,
-    }).mount();
-}
+        const carousel = document.getElementById('image-carousel');
+        if (carousel) {
+            new Glide(carousel, {
+                type: 'carousel',
+                startAt: 0,
+                perView: 1,
+                autoplay: 4000,
+                hoverpause: true,
+                gap: 0,
+            }).mount();
+        }
 
         // Form submission logic
         const form = document.getElementById('registration-form');
         const formMessage = document.getElementById('form-message');
         
-        // IMPORTANT: Replace this with your own Google Apps Script Web App URL
         const scriptURL = "https://script.google.com/macros/s/AKfycbywn9zoMBKxARF74luogTMRKJF_I183LDoFGzSj9UnXqEv0rCQegPQk0VgwIjzC7Hd4SQ/exec";
 
         form.addEventListener('submit', e => {
@@ -543,17 +547,12 @@ if (carousel) {
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 .then(response => {
-                    // This block may not always be reached if a CORS error occurs,
-                    // but if it does, we can confidently show success.
                     formMessage.textContent = 'Thank you! Your application has been received successfully.';
                     formMessage.classList.add('text-green-600');
                     form.reset();
                     detailsContainer.classList.add('hidden');
                 })
                 .catch(error => {
-                    // The "Failed to fetch" error is a common CORS issue with Google Apps Script redirects.
-                    // The form data is usually submitted successfully despite this browser error.
-                    // So, we'll treat this as a success for a better user experience.
                     console.log('Form submission resulted in a CORS error, but is likely successful.', error);
                     formMessage.textContent = 'Thank you! Your application has been received successfully.';
                     formMessage.classList.add('text-green-600');
@@ -566,7 +565,8 @@ if (carousel) {
                 });
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 </body>
 </html>
+
+
 
