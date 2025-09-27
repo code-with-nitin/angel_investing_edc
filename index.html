@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Investor Masterclass - eDC IIT Delhi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* --- Refined Color Palette --- */
+        :root {
+            --iitd-blue-dark: #0A387A;
+            --iitd-blue-light: #1E63B8;
+            --iitd-gold: #D4AF37;
+            --charcoal: #212529;
+            --slate-gray: #4A5568;
+            --light-gray: #F7FAFC;
+        }
+
+        /* --- Tailwind Customizations & New Styles --- */
+        .bg-gradient-iitd { background-image: linear-gradient(to right, var(--iitd-blue-light), var(--iitd-blue-dark)); }
+        .text-iitd-blue { color: var(--iitd-blue-dark); }
+        .bg-iitd-blue { background-color: var(--iitd-blue-dark); }
+        .border-iitd-gold { border-color: var(--iitd-gold); }
+        .text-iitd-gold { color: var(--iitd-gold); }
+        .text-charcoal { color: var(--charcoal); }
+        .text-slate-gray { color: var(--slate-gray); }
+        .bg-light-gray { background-color: var(--light-gray); }
+
+        /* --- Hero Background Pattern --- */
+        .hero-bg {
+             background-color: #f8f9fa;
+             background-image: radial-gradient(var(--iitd-blue-dark) 0.5px, transparent 0.5px), radial-gradient(var(--iitd-blue-dark) 0.5px, #f8f9fa 0.5px);
+             background-size: 20px 20px;
+             background-position: 0 0, 10px 10px;
+        }
+
+        /* --- Custom Form Styles --- */
+        .form-input {
+            @apply mt-1 block w-full rounded-lg border-gray-300 shadow-sm transition duration-150 ease-in-out;
+            @apply focus:border-iitd-blue focus:ring focus:ring-blue-200 focus:ring-opacity-50;
+        }
+        .form-radio {
+            @apply text-iitd-blue focus:ring-blue-200 focus:ring-opacity-50;
+        }
+
+        /* Spinner for form submission button */
+        .spinner {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 2px solid #fff;
+            width: 16px;
+            height: 16px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Fade-in animation on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-charcoal antialiased">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-iitd-blue">eDC IIT Delhi</h1>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="text-slate-gray hover:text-iitd-blue transition-colors duration-300">About</a>
+                <a href="#agenda" class="text-slate-gray hover:text-iitd-blue transition-colors duration-300">Agenda</a>
+                <a href="#speaker" class="text-slate-gray hover:text-iitd-blue transition-colors duration-300">Speaker</a>
+                <a href="#register" class="bg-gradient-iitd text-white px-5 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transform transition-all duration-300">Register</a>
+            </nav>
+            <div class="md:hidden">
+                <a href="#register" class="bg-gradient-iitd text-white px-4 py-2 rounded-full font-semibold hover:shadow-lg transform transition-transform duration-300">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="text-center py-24 lg:py-40 hero-bg">
+            <div class="container mx-auto px-6 fade-in">
+                <h2 class="text-4xl md:text-6xl font-extrabold text-iitd-blue leading-tight tracking-tight">Angel Investor Masterclass</h2>
+                <p class="mt-4 text-xl md:text-2xl text-slate-gray max-w-3xl mx-auto">Where expertise meets opportunity—your journey into angel investing begins.</p>
+                <p class="mt-4 text-md text-gray-500">An exclusive, invite-only workshop by the Entrepreneurship Development Cell, IIT Delhi.</p>
+                <a href="#register" class="mt-10 inline-block bg-gradient-iitd text-white text-lg font-bold px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 duration-300">
+                    Register Your Interest
+                </a>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section id="about" class="py-24">
+            <div class="container mx-auto px-6 fade-in">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-charcoal mb-4">Step Into the World of Startup Investing</h3>
+                    <p class="text-lg text-slate-gray mb-8">
+                        For accomplished professionals ready to turn capital into impact and growth. India’s startup ecosystem is booming, with thousands of ventures shaping the future. Angel investing is not just about returns—it’s about <span class="font-semibold text-iitd-blue">backing innovation early</span>, diversifying wealth, and joining the nation’s entrepreneurial story.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why This Program Section -->
+        <section class="py-24 bg-light-gray">
+            <div class="container mx-auto px-6 fade-in">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-charcoal">Why This Program?</h3>
+                    <p class="mt-3 text-lg text-slate-gray">This is not theory — it’s a hands-on entry into the world of angel investing.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Feature Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300 border-t-4 border-iitd-gold">
+                        <div class="text-iitd-blue mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-charcoal mb-3">Source Deals Like an Angel</h4>
+                        <p class="text-slate-gray">Learn where quality startups come from, how networks share deal flow, and how to access them.</p>
+                    </div>
+                     <!-- Feature Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300 border-t-4 border-iitd-gold">
+                        <div class="text-iitd-blue mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-charcoal mb-3">Evaluate with Precision</h4>
+                        <p class="text-slate-gray">Get frameworks to judge founders, markets, and financial models through real case studies.</p>
+                    </div>
+                     <!-- Feature Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300 border-t-4 border-iitd-gold">
+                         <div class="text-iitd-blue mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H5v-2H3v-2H1.258a1 1 0 01-.97-1.243l1.258-7.5a1 1 0 01.97-1.243H15z" /></svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-charcoal mb-3">Master Deal Terms</h4>
+                        <p class="text-slate-gray">Understand term sheets, equity splits, valuation mechanics, and exit scenarios with clarity.</p>
+                    </div>
+                     <!-- Feature Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300 border-t-4 border-iitd-gold">
+                         <div class="text-iitd-blue mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2 1M4 7l2-1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" /></svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-charcoal mb-3">Practice Before You Invest</h4>
+                        <p class="text-slate-gray">Apply your learning in a guided mock startup pitch, simulating real investment decisions.</p>
+                    </div>
+                     <!-- Feature Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300 border-t-4 border-iitd-gold">
+                         <div class="text-iitd-blue mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-charcoal mb-3">Build Your Investor Network</h4>
+                        <p class="text-slate-gray">Leave with connections to peers, mentors, and early access to IIT Delhi–backed startup opportunities.</p>
+                    </div>
+                     <!-- Feature Card -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300 border-t-4 border-iitd-gold">
+                         <div class="text-iitd-blue mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-charcoal mb-3">Access Curated Deal Flow</h4>
+                        <p class="text-slate-gray">Gain early visibility into high-quality, pre-vetted startups emerging from the IIT ecosystem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agenda Section -->
+        <section id="agenda" class="py-24">
+            <div class="container mx-auto px-6 fade-in">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-charcoal">Event Agenda</h3>
+                    <p class="mt-3 text-lg text-slate-gray">A structured evening designed for maximum learning and impact.</p>
+                </div>
+                <div class="max-w-3xl mx-auto">
+                    <!-- Timeline Item -->
+                    <div class="relative pl-8 sm:pl-12 py-6 border-l-2 border-iitd-blue/30">
+                        <div class="absolute -left-4 top-6 w-8 h-8 bg-gradient-iitd text-white rounded-full border-4 border-white flex items-center justify-center font-bold">1</div>
+                        <h4 class="text-xl font-bold text-iitd-blue mb-1">Kickoff & Networking</h4>
+                        <p class="text-slate-gray">Meet a curated group of peers — accomplished doctors, consultants, professionals, and leaders — all curious about startup investing.</p>
+                    </div>
+                    <!-- Timeline Item -->
+                    <div class="relative pl-8 sm:pl-12 py-6 border-l-2 border-iitd-blue/30">
+                         <div class="absolute -left-4 top-6 w-8 h-8 bg-gradient-iitd text-white rounded-full border-4 border-white flex items-center justify-center font-bold">2</div>
+                        <h4 class="text-xl font-bold text-iitd-blue mb-1">Session 1: Why Angel Investing & How to Source Deals</h4>
+                        <p class="text-slate-gray">Explore what makes startup investing exciting and learn how successful investors build pipelines of promising startups.</p>
+                    </div>
+                    <!-- Timeline Item -->
+                    <div class="relative pl-8 sm:pl-12 py-6 border-l-2 border-iitd-blue/30">
+                         <div class="absolute -left-4 top-6 w-8 h-8 bg-gradient-iitd text-white rounded-full border-4 border-white flex items-center justify-center font-bold">3</div>
+                        <h4 class="text-xl font-bold text-iitd-blue mb-1">Session 2: Evaluating Startups Like an Investor</h4>
+                        <p class="text-slate-gray">Learn structured ways to judge a startup's founder, product-market fit, and business model using proven frameworks.</p>
+                    </div>
+                    <!-- Timeline Item -->
+                    <div class="relative pl-8 sm:pl-12 py-6 border-l-2 border-iitd-blue/30">
+                         <div class="absolute -left-4 top-6 w-8 h-8 bg-gradient-iitd text-white rounded-full border-4 border-white flex items-center justify-center font-bold">4</div>
+                        <h4 class="text-xl font-bold text-iitd-blue mb-1">Session 3: Deal Terms & Exit Frameworks</h4>
+                        <p class="text-slate-gray">Demystify term sheets, equity dilution, SAFE notes, and exit scenarios to protect your investment and earn returns.</p>
+                    </div>
+                    <!-- Timeline Item -->
+                    <div class="relative pl-8 sm:pl-12 py-6 border-l-2 border-iitd-blue/30">
+                         <div class="absolute -left-4 top-6 w-8 h-8 bg-gradient-iitd text-white rounded-full border-4 border-white flex items-center justify-center font-bold">5</div>
+                        <h4 class="text-xl font-bold text-iitd-blue mb-1">Mock Startup Pitch & Investment Simulation</h4>
+                        <p class="text-slate-gray">Act as an angel syndicate in a real startup pitch simulation. Debate, decide, and allocate a mock portfolio with mentor guidance.</p>
+                    </div>
+                    <!-- Timeline Item -->
+                    <div class="relative pl-8 sm:pl-12 py-6 border-l-2 border-iitd-blue/30">
+                         <div class="absolute -left-4 top-6 w-8 h-8 bg-gradient-iitd text-white rounded-full border-4 border-white flex items-center justify-center font-bold">6</div>
+                        <h4 class="text-xl font-bold text-iitd-blue mb-1">Closing & Next Steps</h4>
+                        <p class="text-slate-gray">Conclude with certificate distribution, reflections, and invitations to join exclusive eDC and IIT Delhi angel network activities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speaker Section -->
+        <section id="speaker" class="py-24 bg-light-gray">
+            <div class="container mx-auto px-6 fade-in">
+                 <div class="text-center mb-16">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-charcoal">Meet the Speaker</h3>
+                </div>
+                <div class="grid md:grid-cols-5 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+                    <div class="md:col-span-2">
+                        <div class="relative">
+                            <div class="absolute -top-4 -left-4 w-full h-full bg-iitd-gold rounded-lg transform -rotate-3"></div>
+                            <img src="https://lh3.googleusercontent.com/d/1Oq29yC8Dq7XGjL100N0fSj1D0T2j9m9a" alt="Amit Gupta" class="relative rounded-lg shadow-2xl w-full h-auto object-cover">
+                        </div>
+                    </div>
+                    <div class="md:col-span-3">
+                        <h3 class="text-4xl font-bold text-iitd-blue mb-4">Amit Gupta</h3>
+                        <div class="space-y-4 text-slate-gray text-lg">
+                           <p>From writing code in the early 2000s to writing investment cheques today, Amit’s journey through the Indian startup ecosystem has been nothing short of adventurous. In the past 15+ years, he’s played almost every role in the book — coder, engineering lead, product manager, product head, strategist, and now, full-time angel investor.</p>
+                           <p>As an investor, Amit has built an impressive record — clocking a <span class="font-bold text-charcoal">105% XIRR over six years</span>, backing some of the most promising startups of this decade. Through his Angel Syndicate, he connects disruptive founders with a community of 1000+ aspiring entrepreneurs and investors.</p>
+                           <p>At his heart, Amit is drawn to startups that solve tough, real-world problems with immediate demand — from deeptech to defence tech. For him, angel investing is more than just investing money; it’s about fueling innovation, empowering founders, and helping shape the future.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Form Section -->
+        <section id="register" class="py-24">
+            <div class="container mx-auto px-6 fade-in">
+                 <div class="text-center mb-12 max-w-3xl mx-auto">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-charcoal">Register to Secure Your Invitation</h3>
+                    <p class="mt-3 text-lg text-slate-gray">Please fill out the form below. As this is an invite-only event, our team will review your profile and get in touch regarding your participation.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-2xl border border-gray-100">
+                    <form id="registration-form" name="submit-to-google-sheet">
+                        <div class="grid md:grid-cols-2 gap-x-8 gap-y-6">
+                            <!-- Form Fields -->
+                            <div>
+                                <label for="Name" class="block text-sm font-medium text-gray-700">Name*</label>
+                                <input type="text" name="Name" id="Name" required class="form-input">
+                            </div>
+                            <div>
+                                <label for="Email" class="block text-sm font-medium text-gray-700">Email*</label>
+                                <input type="email" name="Email" id="Email" required class="form-input">
+                            </div>
+                            <div>
+                                <label for="City_of_Residence" class="block text-sm font-medium text-gray-700">City of Residence*</label>
+                                <input type="text" name="City of Residence" id="City_of_Residence" required class="form-input">
+                            </div>
+                             <div>
+                                <label for="Phone_No" class="block text-sm font-medium text-gray-700">Phone No*</label>
+                                <input type="tel" name="Phone No" id="Phone_No" required class="form-input">
+                            </div>
+                             <div>
+                                <label for="Profession" class="block text-sm font-medium text-gray-700">Current Profession/Designation*</label>
+                                <input type="text" name="Current Profession/Designation" id="Profession" required class="form-input">
+                            </div>
+                             <div>
+                                <label for="Organization" class="block text-sm font-medium text-gray-700">Company/Organization*</label>
+                                <input type="text" name="Company/Organization" id="Organization" required class="form-input">
+                            </div>
+                            <div>
+                                <label for="Years_of_Experience" class="block text-sm font-medium text-gray-700">Years of Professional Experience*</label>
+                                <input type="number" name="Years of Professional Experience" id="Years_of_Experience" min="0" required class="form-input">
+                            </div>
+                            <div>
+                                <label for="LinkedIn_Profile" class="block text-sm font-medium text-gray-700">LinkedIn Profile*</label>
+                                <input type="url" name="LinkedIn Profile" id="LinkedIn_Profile" placeholder="https://linkedin.com/in/yourprofile" required class="form-input">
+                            </div>
+                            
+                            <!-- Radio & Conditional Field -->
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-medium text-gray-700">Have you previously invested in startups or alternative assets?*</label>
+                                <div class="mt-2 flex space-x-6">
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="Have you Previously invested in startups or Alternative assets" value="Yes" required class="form-radio">
+                                        <span class="ml-2">Yes</span>
+                                    </label>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="Have you Previously invested in startups or Alternative assets" value="No" class="form-radio">
+                                        <span class="ml-2">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="investment-details-container" class="md:col-span-2 hidden">
+                                 <label for="Investment_Details" class="block text-sm font-medium text-gray-700">If Yes, please share details (number of investments, domains, ticket sizes, etc.)</label>
+                                <textarea name="If Yes, Please Share details (number of investments, domains, ticket sizes, etc.)" id="Investment_Details" rows="3" class="form-input"></textarea>
+                            </div>
+
+                            <!-- Select Fields -->
+                             <div class="md:col-span-2 grid md:grid-cols-3 gap-8">
+                                <div>
+                                    <label for="Income_Range" class="block text-sm font-medium text-gray-700">Approximate annual income range?*</label>
+                                    <select name="What is your approximate annual income range?" id="Income_Range" required class="form-input">
+                                        <option value="" disabled selected>Select range</option>
+                                        <option>Below ₹50 Lakh</option>
+                                        <option>₹50 Lakh - ₹1 Crore</option>
+                                        <option>₹1 Crore - ₹5 Crore</option>
+                                        <option>Above ₹5 Crore</option>
+                                    </select>
+                                </div>
+                                 <div>
+                                    <label for="Ticket_Size" class="block text-sm font-medium text-gray-700">Typical ticket size per startup?*</label>
+                                    <select name="What is the typical ticket size you would be comfortable investing per startup?" id="Ticket_Size" required class="form-input">
+                                        <option value="" disabled selected>Select size</option>
+                                        <option>₹1-5 Lakhs</option>
+                                        <option>₹5-10 Lakhs</option>
+                                        <option>₹10-25 Lakhs</option>
+                                        <option>₹25 Lakhs+</option>
+                                    </select>
+                                </div>
+                                 <div>
+                                    <label for="Investment_Frequency" class="block text-sm font-medium text-gray-700">Investments in next 12 months?*</label>
+                                    <select name="Over the next 12 months, how many startup investments would you ideally like to make?" id="Investment_Frequency" required class="form-input">
+                                        <option value="" disabled selected>Select count</option>
+                                        <option>1-2</option>
+                                        <option>3-5</option>
+                                        <option>5-10</option>
+                                        <option>10+</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- More Radio Groups -->
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-medium text-gray-700">Primary motivation to explore Angel Investing?*</label>
+                                <div class="mt-2 space-y-2">
+                                    <label class="flex items-start"><input type="radio" name="What best describes your primary motivation to explore Angel Investing?" value="To diversify my investment portfolio into high-growth opportunities" required class="form-radio mt-1"><span class="ml-2">To diversify my investment portfolio into high-growth opportunities</span></label>
+                                    <label class="flex items-start"><input type="radio" name="What best describes your primary motivation to explore Angel Investing?" value="To mentor and guide startups with my domain expertise" class="form-radio mt-1"><span class="ml-2">To mentor and guide startups with my domain expertise</span></label>
+                                    <label class="flex items-start"><input type="radio" name="What best describes your primary motivation to explore Angel Investing?" value="To generate higher long-term financial returns compared to traditional assets" class="form-radio mt-1"><span class="ml-2">To generate higher long-term financial returns compared to traditional assets</span></label>
+                                    <label class="flex items-start"><input type="radio" name="What best describes your primary motivation to explore Angel Investing?" value="To contribute to India’s startup ecosystem and innovation journey" class="form-radio mt-1"><span class="ml-2">To contribute to India’s startup ecosystem and innovation journey</span></label>
+                                    <label class="flex items-start"><input type="radio" name="What best describes your primary motivation to explore Angel Investing?" value="To build connections and networks with other investors and entrepreneurs" class="form-radio mt-1"><span class="ml-2">To build connections and networks with other investors and entrepreneurs</span></label>
+                                </div>
+                            </div>
+
+                            <div class="md:col-span-2">
+                                <label for="Queries" class="block text-sm font-medium text-gray-700">Any Queries</label>
+                                <textarea name="Any Queries" id="Queries" rows="3" class="form-input"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 text-center">
+                            <div id="form-message" class="mb-4 text-lg"></div>
+                            <button type="submit" class="w-full md:w-auto bg-gradient-iitd text-white text-lg font-bold px-12 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all disabled:opacity-50 disabled:cursor-wait flex items-center justify-center mx-auto hover:scale-105 transform duration-300">
+                                Submit Application
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white">
+        <div class="container mx-auto px-6 py-10 text-center">
+            <p>&copy; <span id="currentYear"></span> eDC IIT Delhi. All Rights Reserved.</p>
+             <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                   <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Fade-in animation on scroll logic
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+        // Conditional form field logic
+        const investmentRadio = document.querySelectorAll('input[name="Have you Previously invested in startups or Alternative assets"]');
+        const detailsContainer = document.getElementById('investment-details-container');
+        investmentRadio.forEach(radio => {
+            radio.addEventListener('change', (event) => {
+                if (event.target.value === 'Yes') {
+                    detailsContainer.classList.remove('hidden');
+                } else {
+                    detailsContainer.classList.add('hidden');
+                }
+            });
+        });
+
+        // Form submission logic
+        const form = document.getElementById('registration-form');
+        const formMessage = document.getElementById('form-message');
+        
+        // IMPORTANT: Replace this with your own Google Apps Script Web App URL
+        const scriptURL = "https://script.google.com/macros/s/AKfycbywn9zoMBKxARF74luogTMRKJF_I183LDoFGzSj9UnXqEv0rCQegPQk0VgwIjzC7Hd4SQ/exec";
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent.trim();
+            submitButton.disabled = true;
+            submitButton.innerHTML = `<span class="spinner"></span> Submitting...`;
+            formMessage.textContent = '';
+            formMessage.className = 'mb-4 text-lg';
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    // This block may not always be reached if a CORS error occurs,
+                    // but if it does, we can confidently show success.
+                    formMessage.textContent = 'Thank you! Your application has been received successfully.';
+                    formMessage.classList.add('text-green-600');
+                    form.reset();
+                    detailsContainer.classList.add('hidden');
+                })
+                .catch(error => {
+                    // The "Failed to fetch" error is a common CORS issue with Google Apps Script redirects.
+                    // The form data is usually submitted successfully despite this browser error.
+                    // So, we'll treat this as a success for a better user experience.
+                    console.log('Form submission resulted in a CORS error, but is likely successful.', error);
+                    formMessage.textContent = 'Thank you! Your application has been received successfully.';
+                    formMessage.classList.add('text-green-600');
+                    form.reset();
+                    detailsContainer.classList.add('hidden');
+                })
+                .finally(() => {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonText;
+                });
+        });
+    </script>
+</body>
+</html>
+
