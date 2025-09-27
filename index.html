@@ -39,12 +39,44 @@
              background-size: 20px 20px;
              background-position: 0 0, 10px 10px;
         }
+        /* --- Glide.js Carousel Arrow Styles --- */
+.glide__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 9999px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e2e8f0;
+    color: var(--charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.glide__arrow:hover {
+    background-color: #f7fafc;
+    transform: translateY(-50%) scale(1.1);
+}
+.glide__arrow--left {
+    left: -20px;
+}
+.glide__arrow--right {
+    right: -20px;
+}
+@media (max-width: 768px) {
+    .glide__arrow--left { left: 10px; }
+    .glide__arrow--right { right: 10px; }
+}
 
         /* --- Custom Form Styles --- */
         .form-input {
-            @apply mt-1 block w-full rounded-lg border-gray-300 shadow-sm transition duration-150 ease-in-out;
-            @apply focus:border-iitd-blue focus:ring focus:ring-blue-200 focus:ring-opacity-50;
-        }
+    @apply mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 transition duration-200 ease-in-out;
+    @apply focus:bg-white focus:border-iitd-blue-light focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none;
+}
         .form-radio {
             @apply text-iitd-blue focus:ring-blue-200 focus:ring-opacity-50;
         }
@@ -179,7 +211,54 @@
                 </div>
             </div>
         </section>
+        <!-- START: Carousel Section -->
+<section id="past-events" class="py-24 bg-light-gray">
+    <div class="container mx-auto px-6 fade-in">
+        <div class="text-center mb-16">
+            <h3 class="text-3xl lg:text-4xl font-bold text-charcoal">Insights from Past Events</h3>
+        </div>
 
+        <!-- Carousel Container -->
+        <div id="image-carousel" class="glide relative w-full max-w-2xl mx-auto">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <!-- Slide 1 -->
+                    <li class="glide__slide">
+                        <div class="relative">
+                            <div class="absolute -top-4 -left-4 w-full h-full bg-iitd-gold rounded-lg transform -rotate-3"></div>
+                            <img src="https://github.com/code-with-nitin/angel_investing_edc/blob/main/Event_image1.jpg?raw=true" alt="Past Event Image 1" class="relative rounded-lg shadow-2xl w-full h-auto object-cover">
+                        </div>
+                    </li>
+                    <!-- Slide 2 -->
+                    <li class="glide__slide">
+                        <div class="relative">
+                            <div class="absolute -top-4 -left-4 w-full h-full bg-iitd-gold rounded-lg transform -rotate-3"></div>
+                            <img src="https://github.com/code-with-nitin/angel_investing_edc/blob/main/Event_image4.jpg?raw=true" alt="Past Event Image 2" class="relative rounded-lg shadow-2xl w-full h-auto object-cover">
+                        </div>
+                    </li>
+                    <!-- Slide 3 -->
+                    <li class="glide__slide">
+                        <div class="relative">
+                            <div class="absolute -top-4 -left-4 w-full h-full bg-iitd-gold rounded-lg transform -rotate-3"></div>
+                            <img src="https://github.com/code-with-nitin/angel_investing_edc/blob/main/Event_image5.jpg?raw=true" alt="Past Event Image 3" class="relative rounded-lg shadow-2xl w-full h-auto object-cover">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Carousel Navigation Arrows -->
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                </button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END: Carousel Section -->
         <!-- Agenda Section -->
         <section id="agenda" class="py-24">
             <div class="container mx-auto px-6 fade-in">
@@ -433,6 +512,18 @@
                 }
             });
         });
+        // Carousel Initialization
+const carousel = document.getElementById('image-carousel');
+if (carousel) {
+    new Glide(carousel, {
+        type: 'carousel',
+        startAt: 0,
+        perView: 1,
+        autoplay: 4000,
+        hoverpause: true,
+        gap: 0,
+    }).mount();
+}
 
         // Form submission logic
         const form = document.getElementById('registration-form');
@@ -475,6 +566,7 @@
                 });
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 </body>
 </html>
 
