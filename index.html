@@ -530,6 +530,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 
     <script>
+    // This wrapper tells the code to wait until the initial HTML is fully loaded and ready.
+    document.addEventListener('DOMContentLoaded', function() {
+    
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
         // Fade-in animation on scroll logic
@@ -627,7 +630,9 @@
                     submitButton.innerHTML = originalButtonText;
                 });
         });
-    </script>
+
+    }); // End of the DOMContentLoaded wrapper
+</script>
 </body>
 </html>
 
