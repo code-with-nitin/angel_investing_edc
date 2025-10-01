@@ -157,6 +157,14 @@
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
                     <h3 class="text-3xl lg:text-4xl font-bold text-charcoal mb-4">Step Into the World of Startup Investing with IIT Delhi</h3>
+                    <br>
+                    <div class="w-full max-w-2xl mx-auto">
+                        <div class="relative">
+                            <div class="absolute -top-4 -left-4 w-full h-full bg-iitd-gold rounded-lg transform -rotate-3"></div>
+                            <img src="https://github.com/code-with-nitin/angel_investing_edc/blob/main/Meet_the_speaker.jpg?raw=true" alt="Amit Gupta" class="relative rounded-lg shadow-2xl w-full h-auto object-cover">
+                        </div>
+                    </div>
+                    <br>
                     <p class="text-lg text-slate-gray mb-8">
                         For accomplished professionals ready to turn capital into impact and growth. India’s startup ecosystem, with IIT Delhi at its core, is booming. Angel investing is not just about returns—it’s about <span class="font-semibold text-iitd-blue">backing innovation early</span>, diversifying wealth, and joining the nation’s entrepreneurial story.
                     </p>
@@ -617,16 +625,48 @@
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 .then(response => {
-                    formMessage.textContent = 'Thank you! Your application has been received successfully.';
-                    formMessage.classList.add('text-green-600');
+                    formMessage.className = 'mb-4 text-left';
+// Added the new styled HTML success message
+formMessage.innerHTML = `
+    <div class="bg-green-50 border-l-4 border-green-500 text-green-800 p-4 rounded-md shadow-sm" role="alert">
+        <div class="flex">
+            <div class="flex-shrink-0 pt-1">
+                <svg class="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <div class="ml-3">
+                <h3 class="text-lg font-medium text-green-800">Application Received!</h3>
+                <div class="mt-2 text-sm text-green-700">
+                    <p>Thank you! Your application has been received successfully. Our selection committee will review your application to ensure a curated cohort. If selected, you will receive a formal invitation via email with a link to pay the workshop fee and confirm your spot.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+`;
                     form.reset();
                     detailsContainer.classList.add('hidden');
                     motivationOtherContainer.classList.add('hidden'); // Reset the "Other" field visibility
                 })
                 .catch(error => {
                     console.log('Form submission resulted in a CORS error, but is likely successful.', error);
-                    formMessage.textContent = 'Thank you! Your application has been received successfully.';
-                    formMessage.classList.add('text-green-600');
+                    // ADD THIS CODE IN BOTH .then() and .catch()
+// Clear old styles and align text for the new message box
+formMessage.className = 'mb-4 text-left';
+// Added the new styled HTML success message
+formMessage.innerHTML = `
+    <div class="bg-green-50 border-l-4 border-green-500 text-green-800 p-4 rounded-md shadow-sm" role="alert">
+        <div class="flex">
+            <div class="flex-shrink-0 pt-1">
+                <svg class="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <div class="ml-3">
+                <h3 class="text-lg font-medium text-green-800">Application Received!</h3>
+                <div class="mt-2 text-sm text-green-700">
+                    <p>Thank you! Your application has been received successfully. Our selection committee will review your application to ensure a curated cohort. If selected, you will receive a formal invitation via email with a link to pay the workshop fee and confirm your spot.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+`;
                     form.reset();
                     detailsContainer.classList.add('hidden');
                     motivationOtherContainer.classList.add('hidden'); // Reset the "Other" field visibility
